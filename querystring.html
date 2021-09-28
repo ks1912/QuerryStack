@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Querry String</title>
+        <style>
+            body
+            {
+                padding-top: 5%;
+                background-color: lightskyblue;
+                font-family: monospace;
+            }
+            form input
+            {
+                width: 50%;
+                padding: 2%;
+            }
+            form label
+            {
+                text-decoration: solid;
+                font-size:18px;
+            }
+        </style>
+        <script type="text/javascript">
+            function validate()
+            {
+                //Creating variables and assigning values to them
+                var emailid = document.myForm.email.value;
+                var password = document.myForm.pass.value;
+
+                //Empty Column Validation
+                if(emailid==="" || password=="")
+                {
+                    alert("Please fill the remaining details");  
+                    return false;
+                }
+                // Password Number Validation
+                if(password.length < 8 || password.length >20)
+                {
+                    alert("Password Minimum length is 8 and maximum is 20"+fullname);
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- https://www.javascripttutorial.net/javascript-bom/javascript-get-query-string/ -->
+        <!-- Header Tag with Form Name -->
+        <h1 style="text-align:center;">Querry String Test Form</h1>
+        <!-- Form Tag Starting -->
+        <center>
+            <form action="querystringack.html">
+                <label>Email Address:</label><br/>
+                <input type="email" name="email" placeholder="Email Address" /><br/>
+                <label>Password</label><br/>
+                <input type="password" name="pass" placeholder="Enter Password Minimum 8 characters and should contain Special characters"><br/>
+                <input type="submit" value="Sign Up">
+            </form>
+        </center>
+        <!-- Form Tag Ending -->
+    </body>
+</html>
