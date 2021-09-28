@@ -1,1 +1,1 @@
-# QuerryStack
+# QuerryStack using JavaScript
