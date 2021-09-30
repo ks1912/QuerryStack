@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            body
+            {
+                padding-top: 5%;
+                background-color: lightgreen;
+                font-family: monospace;
+            }
+            form input
+            {
+                width: 50%;
+                padding: 2%;
+                margin: 1%;
+            }
+            form label
+            {
+                text-decoration: solid;
+                font-size:18px;
+            }
+        </style>
+        <script>
+            function pleaseValid()
+            {   
+                var passWord = document.logForm.passnew.value;
+                var emailid = document.logForm.emailnew.value;
+                // alert(passWord+emailid);
+                const urlParams = new URLSearchParams(location.search);
+
+                var oldemailid, oldpassword
+                
+                for (const [key, value] of urlParams) 
+                {
+                    //console.log(`${email}:${pass}`); // To get output in this terminal
+                    //document.write(`${key} : ${value}<br>`); // Get written output in text on web browser
+                    const email = urlParams.get('email')
+                    const pass = urlParams.get('pass')
+                    oldemailid = email;
+                    oldpassword = pass;
+                //    alert(email[1]); // Pop up output from web
+                //    alert(pass[]);    // Pop up output from web
+                }
+                //alert(oldemailid+oldpassword);
+
+                if(oldemailid===emailid)
+                {
+                    if(oldpassword===passWord)
+                    {
+                        return true;
+                    }
+                    else 
+                    {
+                        alert("Password is incorrect!");
+                        return false;
+                    }
+                    //return true;
+                }
+                else 
+                {
+                    alert("Email is incorrect!");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Login Page</h1>
+        <center>
+            <form name="logForm" onsubmit="return pleaseValid()" action="querystringack.html">
+                <label>EmailId</label><br/>
+                <input type="email" name="emailnew" placeholder="Email Address" /><br/>
+                <label>Password</label><br/>
+                <input type="password" name="passnew" placeholder="Enter Password Minimum 8 characters"><br/>
+                <input type="submit" value="Login">
+            </form>
+        </center>
+    </body>
+</html>
+
+
+<!-- <script>
+    function validate()
+    {   
+        // Reading from Form
+        var emailnew = document.logForm.emailnew.value;
+        var passnew = document.logForm.passnew.value;
+
+        // Reading from web
+        var params = new URLSearchParams(document.location.search.substring(1));
+        var passWord = params.get(pass);
+        var emailId = params.get(email);
+
+        alert('Old Pasword'+passWord+'New Password'+passnew+'Old Emailid'+emailId+'New EmailId'+emailnew);
+
+
+        //Start logic no 1
+        //const urlParams = new URLSearchParams(location.search);
+
+        //var emailid, password
+        //
+        //for (const [key, value] of urlParams) 
+        //{
+        //    //console.log(`${email}:${pass}`); // To get output in this terminal
+        //    //document.write(`${key} : ${value}<br>`); // Get written output in text on web browser
+        //    const fname = urlParams.get('fname')
+        //    const email = urlParams.get('email')
+        //    const pass = urlParams.get('pass')
+        //    const vpass = urlParams.get('vpass')
+        //    emailid == email;
+        //    password == pass
+        ////    alert(email[1]); // Pop up output from web
+        ////    alert(pass[]);    // Pop up output from web
+        //}
+
+        //End Logic number 1
+
+        //alert(emailId) //check wheather the email is retrival or not
+        //alert(passWord) //check wheather the password is retrival or not
+
+        //if(emailnew != emailid)
+        //{
+        //    alert("EmailId is wrong");
+        //    return false;
+        //}
+        //if(passnew != passWord)
+        //{
+        //    alert("Password is wrong");
+        //    return false;
+        //}
+        if(emailnew===emailid)
+        {
+          if(passnew===passWord)
+            {
+                return true;
+            }
+          else 
+            {
+                alert("Password is incorrect!");
+                return false;
+            }
+        }
+        else 
+        {
+            alert("Email is incorrect!");
+            return false;
+        }
+        // const params = Object.fromEntries(urlSearchParams.entries());
+        // var searchParams = new URLSearchParams("key2=value2&key3=value3");
+
+        //for(var pair of searchParams.entries()) 
+        //{
+        //    console.log(pair[0]+ ', '+ pair[1]);
+        //}
+
+
+        //var queryString = decodeURIComponent(window.location.search);
+        //?para1=value1&para2=value2
+        //queryString = queryString.substring(1);
+        //para1=value1&para2=value2
+
+        //var queries = queryString.split("&");
+        //queries[0]="para1=value1"
+        //queries[1]="para2=value2"
+
+        // USING VALUES or KEYS
+        //for (const x of urlParams.values()) 
+        //{
+            // document.write('<br>'+x);
+            // alert('Email Id and Password are:-'+x); // Pop up output
+            // var emailvalid = document.
+
+        //}
+
+        // USING ENTERIES
+        //for (const entry of urlParams.entries()) 
+        //{
+        //    document.write(entry[0]);
+        //}
+
+        //var queryString = decodeURIComponent(window.location.search);
+        //queryString = queryString.substring(1);
+        //var queries = queryString.split("&");
+        //for (var i = 0; i < queries.length; i++)
+        //{​
+        //    document.write(queries[i] + "<br>");
+        //}​
+    }
+
+
+</script> -->
