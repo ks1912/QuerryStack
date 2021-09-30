@@ -5,9 +5,12 @@
         <style>
             body
             {
-                padding-top: 5%;
+                text-align: center;
                 background-color: lightgreen;
                 font-family: monospace;
+                padding:10%;
+                text-decoration: solid;
+                font-size: 30px;
             }
             form input
             {
@@ -23,6 +26,7 @@
     </head>
     <body>
         <h1 style="text-align: center;">Querry ACK Page</h1>
+        <h3 style="text-align: center;">Email Id and Password are:-</h3>
         <script>
             
             const urlParams = new URLSearchParams(location.search);
@@ -37,8 +41,8 @@
             // USING VALUES or KEYS
             for (const x of urlParams.values()) 
             {
-                //document.write('<br>'+x);
-                alert('Email Id and Password are:-'+x); // Pop up output
+                document.write(x+'<br>');
+                //alert('Email Id and Password are:-'+x); // Pop up output
             }
 
             // USING ENTERIES
