@@ -1,0 +1,22 @@
+html body
+{
+    text-align: center;
+    background-color: lightgreen;
+    font-family: monospace;
+    text-decoration: solid;
+    font-size: 30px;
+}
+body
+{
+  padding:10%;
+}
+form input
+{
+    width: 50%;
+    padding: 2%;
+}
+form label
+{
+    text-decoration: solid;
+    font-size:18px;
+}
